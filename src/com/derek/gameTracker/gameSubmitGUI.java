@@ -17,31 +17,9 @@ public class gameSubmitGUI {
     private JLabel anotherUserExperienceLabel;
 
     private JTable gameTable;
+    private JScrollPane scrollPane;
 
     public gameSubmitGUI() {
-        // table creation stuff
-        String[] columnNames = {"Title", "Platform", "Main Story Complete", "100%", "Has Multiplayer"}; // self explanatory
-        Object[][] data = new Object[5000][5000]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
-
-        try {
-            // connection stuff and SQL instance starting stuff
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String url = "jdbc:mysql://localhost:3306/gametracker";
-            String user = "game";
-            String password = "thisisgame";
-            Connection con = DriverManager.getConnection(url, user, password);
-            // end that connection stuff
-
-            String q = "SELECT * FROM games"; // our cute query
-            Statement s = con.createStatement(); // the statement that takes in our query
-            ResultSet r = s.executeQuery(q); // what results from our statement
-            while (r.next()) { // now we go through the results we get
-
-            }
-        } catch (Exception err) {
-            System.out.println(err.getMessage());
-        }
-
         submitButton.addActionListener(new ActionListener() { // when the submit button is pressed, do:
             @Override
             public void actionPerformed(ActionEvent e) { // gets the text from the input and sends it to the SQL database
@@ -70,8 +48,39 @@ public class gameSubmitGUI {
                 // clears the text in the input spaces
                 gameInput.setText("");
                 platformInput.setText("");
+                createUIComponents(); // refreshes the table
             }
         });
+    }
+
+    // this method creates our table from the SQL database.
+    public static JTable createTable() {
+        String[] columnNames = {"Title", "Platform", "Main Story Complete", "100%", "Has Multiplayer"}; // self explanatory
+        Object[][] data = new Object[5000][5000]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
+
+        try {
+            // connection stuff and SQL instance starting stuff
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String url = "jdbc:mysql://localhost:3306/gametracker";
+            String user = "game";
+            String password = "thisisgame";
+            Connection con = DriverManager.getConnection(url, user, password);
+            // end that connection stuff
+
+            String q = "SELECT * FROM games"; // our cute query
+            Statement s = con.createStatement(); // the statement that takes in our query
+            ResultSet r = s.executeQuery(q); // what results from our statement
+            int row = 0;
+            while (r.next()) { // now we go through the results we get
+                Object[] o = {r.getString("title"), r.getString("platform"), r.getInt("mainStory"), r.getInt("oneHundredPercent"), r.getInt("hasMultiplayer")};
+                data[row++] = o; // self explanatory
+            }
+        } catch (Exception err) {
+            System.out.println(err.getMessage());
+        }
+        JTable gameTable = new JTable(data, columnNames);
+        gameTable.setFillsViewportHeight(true);
+        return gameTable;
     }
 
     public static void main(String[] args) { // stuff that intelij made for me :)
@@ -80,5 +89,10 @@ public class gameSubmitGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    private void createUIComponents() {
+        gameTable = createTable();
+        scrollPane = new JScrollPane(gameTable);
     }
 }
