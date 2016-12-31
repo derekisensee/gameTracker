@@ -7,23 +7,16 @@ import java.sql.*;
 public class Driver {
     public static void main(String[] args) {
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gametracker", "game", "thisisgame");
+            Class.forName("org.sqlite.JDBC");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db");
 
-            String query = "SELECT * FROM games";
-
-            Statement s = con.createStatement();
-            ResultSet result = s.executeQuery(query);
-
-            while (result.next()) {
-                String title = result.getString("title");
-                String platform = result.getString("platform");
-
-                System.out.println("Title: " + title + "\nPlatform: " + platform);
+            String q = "SELECT * FROM games";
+            Statement s = c.createStatement();
+            ResultSet r = s.executeQuery(q);
+            while (r.next()) {
+                System.out.println("Title: " + r.getString("title") + "\nPlatform: " + r.getString("platform"));
             }
-
-        }
-        catch (Exception err) {
+        } catch (Exception err) {
             System.out.println("error: " + err.toString());
         }
     }
