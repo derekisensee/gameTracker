@@ -2,6 +2,8 @@
 package com.derek.gameTracker;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -18,6 +20,7 @@ public class gameSubmitGUI {
 
     private JTable gameTable;
     private JScrollPane scrollPane;
+    private JComboBox platformBox;
 
     public gameSubmitGUI() {
         submitButton.addActionListener(new ActionListener() { // when the submit button is pressed, do:
@@ -48,9 +51,11 @@ public class gameSubmitGUI {
                 // clears the text in the input spaces
                 gameInput.setText("");
                 platformInput.setText("");
-                createUIComponents(); // refreshes the table
+                // refresh the table
+                refreshTable();
             }
         });
+
     }
 
     // this method creates our table from the SQL database.
@@ -78,9 +83,44 @@ public class gameSubmitGUI {
         } catch (Exception err) {
             System.out.println(err.getMessage());
         }
-        JTable gameTable = new JTable(data, columnNames);
+        DefaultTableModel model = new DefaultTableModel(data, columnNames);
+        JTable gameTable = new JTable();
+        gameTable.setModel(model);
         gameTable.setFillsViewportHeight(true);
         return gameTable;
+    }
+
+    public void refreshTable() {
+        String[] columnNames = {"Title", "Platform", "Main Story Complete", "100%", "Has Multiplayer"}; // self explanatory
+        Object[][] data = new Object[5000][5000]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
+
+        try {
+            // connection stuff and SQL instance starting stuff
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String url = "jdbc:mysql://localhost:3306/gametracker";
+            String user = "game";
+            String password = "thisisgame";
+            Connection con = DriverManager.getConnection(url, user, password);
+            // end that connection stuff
+
+            String q = "SELECT * FROM games"; // our cute query
+            Statement s = con.createStatement(); // the statement that takes in our query
+            ResultSet r = s.executeQuery(q); // what results from our statement
+            int row = 0;
+            while (r.next()) { // now we go through the results we get
+                Object[] o = {r.getString("title"), r.getString("platform"), r.getInt("mainStory"), r.getInt("oneHundredPercent"), r.getInt("hasMultiplayer")};
+                data[row++] = o; // self explanatory
+            }
+        } catch (Exception err) {
+            System.out.println(err.getMessage());
+        }
+        DefaultTableModel model = new DefaultTableModel(data, columnNames);
+        gameTable.setModel(model);
+    }
+
+    private void createUIComponents() {
+        gameTable = createTable();
+        scrollPane = new JScrollPane(gameTable);
     }
 
     public static void main(String[] args) { // stuff that intelij made for me :)
@@ -89,10 +129,5 @@ public class gameSubmitGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-    }
-
-    private void createUIComponents() {
-        gameTable = createTable();
-        scrollPane = new JScrollPane(gameTable);
     }
 }
