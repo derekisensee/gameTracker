@@ -3,7 +3,6 @@ package com.derek.gameTracker;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -21,6 +20,7 @@ public class gameSubmitGUI {
     private JTable gameTable;
     private JScrollPane scrollPane;
     private JComboBox platformBox;
+    private JRadioButton multiplayerButton;
 
     public gameSubmitGUI() {
         submitButton.addActionListener(new ActionListener() { // when the submit button is pressed, do:
@@ -28,7 +28,7 @@ public class gameSubmitGUI {
             public void actionPerformed(ActionEvent e) { // gets the text from the input and sends it to the SQL database
                 // the text getting stuff
                 String gameTitle = gameInput.getText();
-                String platform = platformInput.getText();
+                String platform = (String)platformBox.getSelectedItem();
 
                 try { // the SQL stuff
                     Class.forName("com.mysql.jdbc.Driver").newInstance(); // this starts a new instance of the jdbc.Driver thing for MySQL
@@ -38,24 +38,30 @@ public class gameSubmitGUI {
                     String password = "thisisgame";
                     Connection con = DriverManager.getConnection(url, user, password);
 
-                    String query = "INSERT INTO games (title, platform) VALUES" + "(?, ?)";
+                    String query = "INSERT INTO games (title, platform, hasMultiplayer) VALUES" + "(?, ?, ?)";
 
                     PreparedStatement s = con.prepareStatement(query);
                     s.setString(1, gameTitle); // sets the first question mark to be the gameTitle string we got before the try
                     s.setString(2, platform); // same as above, but sets for the second question mark
+                    if (multiplayerButton.isSelected()) {
+                        s.setInt(3, 1);
+                    }
+                    else {
+                        s.setInt(3, 0);
+                    }
+                    //s.setInt(4, radioButton2.getX());
+                    //s.setInt(5, radioButton3.getX());
                     s.executeUpdate(); // executes.
                 } catch (Exception err) {
                     System.out.println("error: " + err.toString()); // *hopefully* this never happens but whatever.
                                                                     // have to figure out a better way to make sure this never happens
                 }
-                // clears the text in the input spaces
+                // clears the text in the input space
                 gameInput.setText("");
-                platformInput.setText("");
                 // refresh the table
                 refreshTable();
             }
         });
-
     }
 
     // this method creates our table from the SQL database.
@@ -90,7 +96,7 @@ public class gameSubmitGUI {
         return gameTable;
     }
 
-    public void refreshTable() {
+    public void refreshTable() { // yeah this is copied from createTable(), we're doing the same thing, just refreshing the existing gameTable.
         String[] columnNames = {"Title", "Platform", "Main Story Complete", "100%", "Has Multiplayer"}; // self explanatory
         Object[][] data = new Object[5000][5000]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
 
@@ -119,8 +125,13 @@ public class gameSubmitGUI {
     }
 
     private void createUIComponents() {
+        // the table things
         gameTable = createTable();
         scrollPane = new JScrollPane(gameTable);
+
+        // the ComboBox things
+        String[] platforms = {"PlayStation 4", "PlayStation Vita", "Xbox One", "WiiU", "3DS", "PC", "Other"};
+        platformBox = new JComboBox(platforms);
     }
 
     public static void main(String[] args) { // stuff that intelij made for me :)
