@@ -30,7 +30,7 @@ public class gameSubmitGUI {
     public gameSubmitGUI() {
         submitButton.addActionListener(new ActionListener() { // when the submit button is pressed, do:
             @Override
-            public void actionPerformed(ActionEvent e) { // gets the text from the input and sends it to the SQL database
+            public void actionPerformed(ActionEvent e) {
                 int actionToDo = queryType.getSelectedIndex();
                 if (actionToDo == 0) { // create entry
                     createEntry();
@@ -41,8 +41,6 @@ public class gameSubmitGUI {
                 else if (actionToDo == 2) { // delete entry
                     deleteEntry();
                 }
-
-
             }
         });
     }
@@ -56,19 +54,28 @@ public class gameSubmitGUI {
             Class.forName("org.sqlite.JDBC");
             Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db"); // this starts a new instance of the jdbc.Driver thing for SQLite
 
-            String query = "INSERT INTO games (title, platform, hasMultiplayer) VALUES" + "(?, ?, ?)";
+            String query = "INSERT INTO games (title, platform, mainStory, oneHundredPercent, hasMultiplayer) VALUES" + "(?, ?, ?, ?, ?)";
+
+            int mainStory = 0;
+            int oneHundredPercent = 0;
+            int hasMultiplayer = 0;
+
+            if (mainStoryRadio.isSelected()) {
+                mainStory = 1;
+            }
+            if (oneHundredPercentRadio.isSelected()) {
+                oneHundredPercent = 1;
+            }
+            if (multiplayerRadio.isSelected()) {
+                hasMultiplayer = 1;
+            }
 
             PreparedStatement s = c.prepareStatement(query);
             s.setString(1, gameTitle); // sets the first question mark to be the gameTitle string we got before the try
             s.setString(2, platform); // same as above, but sets for the second question mark
-            if (multiplayerRadio.isSelected()) {
-                s.setInt(3, 1);
-            }
-            else {
-                s.setInt(3, 0);
-            }
-            //s.setInt(4, oneHundredPercentRadio.getX());
-            //s.setInt(5, radioButton3.getX());
+            s.setInt(3, mainStory);
+            s.setInt(4, oneHundredPercent);
+            s.setInt(5, hasMultiplayer);
             s.executeUpdate(); // executes.
         } catch (Exception err) {
             System.out.println("error: " + err.toString()); // *hopefully* this never happens but whatever.
@@ -107,12 +114,11 @@ public class gameSubmitGUI {
             s.setInt(2, oneHundredPercent);
             s.setInt(3, hasMultiplayer);
             s.executeUpdate();
-
-            gameInput.setText("");
-            refreshTable();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        gameInput.setText("");
+        refreshTable();
     }
 
     public void deleteEntry() {
