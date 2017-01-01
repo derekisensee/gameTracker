@@ -52,7 +52,7 @@ public class gameSubmitGUI {
 
         try { // the SQL stuff
             Class.forName("org.sqlite.JDBC");
-            Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db"); // this starts a new instance of the jdbc.Driver thing for SQLite
+            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db"); // this starts a new instance of the jdbc.Driver thing for SQLite
 
             String query = "INSERT INTO games (title, platform, mainStory, oneHundredPercent, hasMultiplayer) VALUES" + "(?, ?, ?, ?, ?)";
 
@@ -90,7 +90,7 @@ public class gameSubmitGUI {
     public void editEntry() {
         try {
             Class.forName("org.sqlite.JDBC");
-            Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
 
             String title = gameInput.getText();
             int mainStory = 0;
@@ -124,7 +124,7 @@ public class gameSubmitGUI {
     public void deleteEntry() {
         try {
             Class.forName("org.sqlite.JDBC");
-            Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
 
             String title = gameInput.getText();
             String query = "DELETE FROM games WHERE title = '" + title + "'";
@@ -146,7 +146,7 @@ public class gameSubmitGUI {
         try {
             // connection stuff and SQL instance starting stuff
             Class.forName("org.sqlite.JDBC");
-            Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
             // end that connection stuff
 
             String q = "SELECT * FROM games"; // our cute query
@@ -175,7 +175,7 @@ public class gameSubmitGUI {
         try {
             // connection stuff and SQL instance starting stuff
             Class.forName("org.sqlite.JDBC");
-            Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
             // end that connection stuff
 
             String q = "SELECT * FROM games"; // our cute query
