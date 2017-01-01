@@ -1,9 +1,6 @@
+// this file used for testing.
 package com.derek.gameTracker;
 import java.sql.*;
-/**
- * Created by derek_000 on 12/26/2016.
- */
-// this file used for testing.
 public class Driver {
     public static void main(String[] args) {
         try {

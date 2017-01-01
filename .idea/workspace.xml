@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36663f66-8e1c-4e7a-abf6-9de62521729d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/Driver.class" afterPath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/Driver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/gameSubmitGUI$1.class" afterPath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/gameSubmitGUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/gameSubmitGUI.class" afterPath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/gameSubmitGUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/derek/gameTracker/Driver.java" afterPath="$PROJECT_DIR$/src/com/derek/gameTracker/Driver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.form" afterPath="$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java" afterPath="$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java" />
     </list>
@@ -27,10 +29,10 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="10" selection-end-column="97" />
+            <state relative-caret-position="0">
+              <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
               <folding>
-                <marker date="1483163444289" expanded="true" signature="378:397" ph=" SELECT statement (GAMES)" />
+                <marker date="1483291486539" expanded="true" signature="331:350" ph=" SELECT statement (GAMES)" />
               </folding>
             </state>
           </provider>
@@ -39,17 +41,18 @@
       <file leaf-file-name="gameSubmitGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="80" column="12" lean-forward="true" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
+            <state relative-caret-position="357">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
                 <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
                 <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
                 <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
-                <marker date="1483215391930" expanded="true" signature="1835:1907" ph=" INSERT statement (GAMES)" />
-                <marker date="1483215391930" expanded="true" signature="3832:3851" ph=" SELECT statement (GAMES)" />
-                <marker date="1483215391930" expanded="true" signature="5467:5486" ph=" SELECT statement (GAMES)" />
+                <marker date="1483294777952" expanded="true" signature="1992:2064" ph=" INSERT statement (GAMES)" />
+                <marker date="1483294777952" expanded="true" signature="3393:3496" ph=" UPDATE statement (GAMES)" />
+                <marker date="1483294777952" expanded="true" signature="4441:4488" ph=" DELETE statement (GAMES)" />
+                <marker date="1483294777952" expanded="true" signature="5423:5442" ph=" SELECT statement (GAMES)" />
+                <marker date="1483294777952" expanded="true" signature="7058:7077" ph=" SELECT statement (GAMES)" />
               </folding>
             </state>
           </provider>
@@ -469,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483163523728</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Replac MySQL with SQLite. Also start work on Create/Edit/Delete entry work.">
+      <created>1483215425890</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1483215425890</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -498,7 +508,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123958334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -518,7 +528,8 @@
     <MESSAGE value="Add &quot;Has Multiplayer?&quot; button" />
     <MESSAGE value="Test SQLite" />
     <MESSAGE value="Test SQLite. Can &quot;SELECT * FROM games&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Test SQLite. Can &quot;SELECT * FROM games&quot;." />
+    <MESSAGE value="Replac MySQL with SQLite. Also start work on Create/Edit/Delete entry work." />
+    <option name="LAST_COMMIT_MESSAGE" value="Replac MySQL with SQLite. Also start work on Create/Edit/Delete entry work." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -537,13 +548,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
-            <marker date="1483215391930" expanded="true" signature="1835:1907" ph=" INSERT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="3832:3851" ph=" SELECT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="5467:5486" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="1992:2064" ph=" INSERT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="3393:3496" ph=" UPDATE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="4441:4488" ph=" DELETE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="5423:5442" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="7058:7077" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -559,45 +571,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
-            <marker date="1483215391930" expanded="true" signature="1835:1907" ph=" INSERT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="3832:3851" ph=" SELECT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="5467:5486" ph=" SELECT statement (GAMES)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding>
-            <marker date="1483163444289" expanded="true" signature="378:397" ph=" SELECT statement (GAMES)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
-            <marker date="1483215391930" expanded="true" signature="1835:1907" ph=" INSERT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="3832:3851" ph=" SELECT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="5467:5486" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="1992:2064" ph=" INSERT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="3393:3496" ph=" UPDATE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="4441:4488" ph=" DELETE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="5423:5442" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="7058:7077" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -612,7 +593,7 @@
         <state relative-caret-position="255">
           <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding>
-            <marker date="1483163444289" expanded="true" signature="378:397" ph=" SELECT statement (GAMES)" />
+            <marker date="1483291486539" expanded="true" signature="331:350" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -623,13 +604,47 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
-            <marker date="1483215391930" expanded="true" signature="1835:1907" ph=" INSERT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="3832:3851" ph=" SELECT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="5467:5486" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="1992:2064" ph=" INSERT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="3393:3496" ph=" UPDATE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="4441:4488" ph=" DELETE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="5423:5442" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="7058:7077" ph=" SELECT statement (GAMES)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding>
+            <marker date="1483291486539" expanded="true" signature="331:350" ph=" SELECT statement (GAMES)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
+            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
+            <marker date="1483294777952" expanded="true" signature="1992:2064" ph=" INSERT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="3393:3496" ph=" UPDATE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="4441:4488" ph=" DELETE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="5423:5442" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="7058:7077" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -647,7 +662,7 @@
         <state relative-caret-position="255">
           <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding>
-            <marker date="1483163444289" expanded="true" signature="378:397" ph=" SELECT statement (GAMES)" />
+            <marker date="1483291486539" expanded="true" signature="331:350" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -658,13 +673,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
-            <marker date="1483215391930" expanded="true" signature="1835:1907" ph=" INSERT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="3832:3851" ph=" SELECT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="5467:5486" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="1992:2064" ph=" INSERT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="3393:3496" ph=" UPDATE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="4441:4488" ph=" DELETE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="5423:5442" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="7058:7077" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -682,7 +698,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1483163444289" expanded="true" signature="378:397" ph=" SELECT statement (GAMES)" />
+            <marker date="1483291486539" expanded="true" signature="331:350" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -693,13 +709,14 @@
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
-            <marker date="1483215391930" expanded="true" signature="1835:1907" ph=" INSERT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="3832:3851" ph=" SELECT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="5467:5486" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="1992:2064" ph=" INSERT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="3393:3496" ph=" UPDATE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="4441:4488" ph=" DELETE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="5423:5442" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="7058:7077" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -714,10 +731,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="10" selection-end-column="97" />
+        <state relative-caret-position="0">
+          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding>
-            <marker date="1483163444289" expanded="true" signature="378:397" ph=" SELECT statement (GAMES)" />
+            <marker date="1483291486539" expanded="true" signature="331:350" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>
@@ -735,17 +752,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="80" column="12" lean-forward="true" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#gameSubmitGUI#0" expanded="false" />
-            <marker date="1483215391930" expanded="true" signature="1835:1907" ph=" INSERT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="3832:3851" ph=" SELECT statement (GAMES)" />
-            <marker date="1483215391930" expanded="true" signature="5467:5486" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="1992:2064" ph=" INSERT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="3393:3496" ph=" UPDATE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="4441:4488" ph=" DELETE statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="5423:5442" ph=" SELECT statement (GAMES)" />
+            <marker date="1483294777952" expanded="true" signature="7058:7077" ph=" SELECT statement (GAMES)" />
           </folding>
         </state>
       </provider>

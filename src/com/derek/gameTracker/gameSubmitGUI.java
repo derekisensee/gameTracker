@@ -19,9 +19,13 @@ public class gameSubmitGUI {
 
     private JTable gameTable;
     private JScrollPane scrollPane;
+
     private JComboBox platformBox;
-    private JRadioButton multiplayerButton;
     private JComboBox queryType;
+
+    private JRadioButton multiplayerRadio;
+    private JRadioButton mainStoryRadio;
+    private JRadioButton oneHundredPercentRadio;
 
     public gameSubmitGUI() {
         submitButton.addActionListener(new ActionListener() { // when the submit button is pressed, do:
@@ -32,10 +36,10 @@ public class gameSubmitGUI {
                     createEntry();
                 }
                 else if (actionToDo == 1) { // edit entry
-
+                    editEntry();
                 }
                 else if (actionToDo == 2) { // delete entry
-
+                    deleteEntry();
                 }
 
 
@@ -57,13 +61,13 @@ public class gameSubmitGUI {
             PreparedStatement s = c.prepareStatement(query);
             s.setString(1, gameTitle); // sets the first question mark to be the gameTitle string we got before the try
             s.setString(2, platform); // same as above, but sets for the second question mark
-            if (multiplayerButton.isSelected()) {
+            if (multiplayerRadio.isSelected()) {
                 s.setInt(3, 1);
             }
             else {
                 s.setInt(3, 0);
             }
-            //s.setInt(4, radioButton2.getX());
+            //s.setInt(4, oneHundredPercentRadio.getX());
             //s.setInt(5, radioButton3.getX());
             s.executeUpdate(); // executes.
         } catch (Exception err) {
@@ -78,7 +82,34 @@ public class gameSubmitGUI {
 
     public void editEntry() {
         try {
+            Class.forName("org.sqlite.JDBC");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db");
 
+            String title = gameInput.getText();
+            int mainStory = 0;
+            int oneHundredPercent = 0;
+            int hasMultiplayer = 0;
+
+            String query = "UPDATE games SET mainStory = ?, oneHundredPercent = ?, hasMultiplayer = ? WHERE title = '" + title + "'";
+
+            if (mainStoryRadio.isSelected()) {
+                mainStory = 1;
+            }
+            if (oneHundredPercentRadio.isSelected()) {
+                oneHundredPercent = 1;
+            }
+            if (multiplayerRadio.isSelected()) {
+                hasMultiplayer = 1;
+            }
+
+            PreparedStatement s = c.prepareStatement(query);
+            s.setInt(1, mainStory);
+            s.setInt(2, oneHundredPercent);
+            s.setInt(3, hasMultiplayer);
+            s.executeUpdate();
+
+            gameInput.setText("");
+            refreshTable();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -86,7 +117,16 @@ public class gameSubmitGUI {
 
     public void deleteEntry() {
         try {
+            Class.forName("org.sqlite.JDBC");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite\\gametracker.db");
 
+            String title = gameInput.getText();
+            String query = "DELETE FROM games WHERE title = '" + title + "'";
+
+            PreparedStatement s = c.prepareStatement(query);
+            s.executeUpdate();
+            gameInput.setText("");
+            refreshTable();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
