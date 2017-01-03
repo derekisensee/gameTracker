@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="gameTracker:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/gameTracker_jar</output-path>
+    <root id="archive" name="gameTracker.jar">
+      <element id="module-output" name="gameTracker" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/sqlite-jdbc-3.15.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/mysql-connector-java-5.0.8-bin.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$/sqlite" />
+    </root>
+  </artifact>
+</component>

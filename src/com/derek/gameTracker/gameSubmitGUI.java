@@ -11,7 +11,6 @@ public class gameSubmitGUI {
     private JPanel panel1;
 
     private JTextField gameInput;
-    private JTextField platformInput;
     private JButton submitButton;
 
     private JLabel userGameEntryExperienceField;
@@ -40,6 +39,42 @@ public class gameSubmitGUI {
                 }
                 else if (actionToDo == 2) { // delete entry
                     deleteEntry();
+                }
+            }
+        });
+        queryType.addActionListener(new ActionListener() { // hides or shows elements based on selected comboBox index
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selected = queryType.getSelectedIndex();
+
+                if (selected == 0) { // if 'create' selection
+                    gameInput.setVisible(true);
+                    userGameEntryExperienceField.setVisible(true);
+                    anotherUserExperienceLabel.setVisible(true);
+                    platformBox.setVisible(true);
+                    multiplayerRadio.setVisible(true);
+                    mainStoryRadio.setVisible(true);
+                    oneHundredPercentRadio.setVisible(true);
+                }
+                if (selected == 1) { // if 'edit' selection
+                    gameInput.setVisible(true);
+                    userGameEntryExperienceField.setVisible(true);
+                    multiplayerRadio.setVisible(true);
+                    mainStoryRadio.setVisible(true);
+                    oneHundredPercentRadio.setVisible(true);
+
+                    platformBox.setVisible(false);
+                    anotherUserExperienceLabel.setVisible(false);
+                }
+                if (selected == 2) { // if 'delete' selection
+                    gameInput.setVisible(true);
+                    userGameEntryExperienceField.setVisible(true);
+
+                    platformBox.setVisible(false);
+                    anotherUserExperienceLabel.setVisible(false);
+                    multiplayerRadio.setVisible(false);
+                    mainStoryRadio.setVisible(false);
+                    oneHundredPercentRadio.setVisible(false);
                 }
             }
         });
