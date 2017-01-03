@@ -2,7 +2,10 @@
 package com.derek.gameTracker;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -196,14 +199,24 @@ public class gameSubmitGUI {
             System.out.println(err.getMessage());
         }
         DefaultTableModel model = new DefaultTableModel(data, columnNames);
-        JTable gameTable = new JTable();
-        gameTable.setModel(model);
+        JTable gameTable = new JTable(model) { // problem is here :(
+            public Component prepareRenderer(TableCellRenderer renderer, int row, int col) {
+                Component comp = super.prepareRenderer(renderer, row, col);
+                if (getValueAt(row, col).equals("0")) {
+                    comp.setBackground(Color.RED);
+                }
+                else if (!(getValueAt(row, col).equals(null)) && !(getValueAt(row, col).getClass().equals(String.class)) && (int)getValueAt(row, col) == 1) {
+                    comp.setBackground(Color.green);
+                }
+                return comp;
+            }
+        };
         gameTable.setFillsViewportHeight(true);
         return gameTable;
     }
 
     // refreshes the table after a query is performed.
-    public void refreshTable() { // yeah this is copied from createTable(), we're doing the same thing, just refreshing the existing gameTable.
+    public void refreshTable() { // copied from createTable(), we're doing the same thing, just refreshing the existing gameTable.
         String[] columnNames = {"Title", "Platform", "Main Story Complete", "100%", "Has Multiplayer"}; // self explanatory
         Object[][] data = new Object[5000][5000]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
 
