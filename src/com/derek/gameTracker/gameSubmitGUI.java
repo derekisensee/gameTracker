@@ -29,6 +29,9 @@ public class gameSubmitGUI {
     private JRadioButton mainStoryRadio;
     private JRadioButton oneHundredPercentRadio;
 
+    private JComboBox deleteGameBox;
+    private JLabel deleteGameLabel;
+
     public gameSubmitGUI() {
         submitButton.addActionListener(new ActionListener() { // when the submit button is pressed, do:
             @Override
@@ -58,6 +61,9 @@ public class gameSubmitGUI {
                     multiplayerRadio.setVisible(true);
                     mainStoryRadio.setVisible(true);
                     oneHundredPercentRadio.setVisible(true);
+
+                    deleteGameBox.setVisible(false);
+                    deleteGameLabel.setVisible(false);
                 }
                 if (selected == 1) { // if 'edit' selection
                     gameInput.setVisible(true);
@@ -68,10 +74,14 @@ public class gameSubmitGUI {
 
                     platformBox.setVisible(false);
                     anotherUserExperienceLabel.setVisible(false);
+                    deleteGameBox.setVisible(false);
+                    deleteGameLabel.setVisible(false);
                 }
                 if (selected == 2) { // if 'delete' selection
                     gameInput.setVisible(true);
                     userGameEntryExperienceField.setVisible(true);
+                    deleteGameLabel.setVisible(true);
+                    deleteGameBox.setVisible(true);
 
                     platformBox.setVisible(false);
                     anotherUserExperienceLabel.setVisible(false);
@@ -182,7 +192,6 @@ public class gameSubmitGUI {
 
     // this method creates our table from the SQL database.
     public static JTable createTable() {
-        long startTime = System.currentTimeMillis();
         int count;
         try { // this finds the count of rows in our database
             // connection stuff and SQL instance starting stuff
