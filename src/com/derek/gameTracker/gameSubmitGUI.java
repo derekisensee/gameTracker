@@ -205,14 +205,16 @@ public class gameSubmitGUI {
                 Object val = getValueAt(row, col);
                 if (!(val == null)) {
                     try {
-                        int newVal = Integer.parseInt((String)val);
-                        System.out.println(newVal);
-                        if (newVal == 0) {
-                            comp.setBackground(Color.red);
-                            System.out.println("True");
-                        } else if (newVal == 1) {
-                            comp.setBackground(Color.green);
-                            System.out.println("Super True");
+                        if (val instanceof Integer) {
+                            if ((int)val == 0) {
+                                comp.setBackground(Color.red);
+                                System.out.println("True");
+                            } else if ((int) val == 1) {
+                                comp.setBackground(Color.green);
+                                System.out.println("Super True");
+                            } else {
+                                comp.setBackground(Color.lightGray);
+                            }
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
