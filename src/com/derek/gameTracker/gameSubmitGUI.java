@@ -202,12 +202,25 @@ public class gameSubmitGUI {
         JTable gameTable = new JTable(model) { // problem is here :(
             public Component prepareRenderer(TableCellRenderer renderer, int row, int col) {
                 Component comp = super.prepareRenderer(renderer, row, col);
-                if (getValueAt(row, col).equals("0")) {
-                    comp.setBackground(Color.RED);
+                Object val = getValueAt(row, col);
+                if (!(val == null)) {
+                    try {
+                        int newVal = Integer.parseInt((String)val);
+                        System.out.println(newVal);
+                        if (newVal == 0) {
+                            comp.setBackground(Color.red);
+                            System.out.println("True");
+                        } else if (newVal == 1) {
+                            comp.setBackground(Color.green);
+                            System.out.println("Super True");
+                        }
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
-                else if (!(getValueAt(row, col).equals(null)) && !(getValueAt(row, col).getClass().equals(String.class)) && (int)getValueAt(row, col) == 1) {
-                    comp.setBackground(Color.green);
-                }
+                //else if (!(getValueAt(row, col).equals(null)) && !(getValueAt(row, col).getClass().equals(String.class)) && (int)getValueAt(row, col) == 1) {
+                //    comp.setBackground(Color.green);
+                //}
                 return comp;
             }
         };
