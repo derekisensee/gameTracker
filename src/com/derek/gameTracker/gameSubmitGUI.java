@@ -115,13 +115,12 @@ public class gameSubmitGUI {
             s.setInt(4, oneHundredPercent);
             s.setInt(5, hasMultiplayer);
             s.executeUpdate(); // executes.
+            c.close();
         } catch (Exception err) {
             System.out.println("error: " + err.toString()); // *hopefully* this never happens but whatever.
             // have to figure out a better way to make sure this never happens
         }
-        // clears the text in the input space
         gameInput.setText("");
-        // refresh the table
         refreshTable();
     }
 
@@ -152,6 +151,7 @@ public class gameSubmitGUI {
             s.setInt(2, oneHundredPercent);
             s.setInt(3, hasMultiplayer);
             s.executeUpdate();
+            c.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -170,6 +170,7 @@ public class gameSubmitGUI {
             PreparedStatement s = c.prepareStatement(query);
             s.executeUpdate();
             gameInput.setText("");
+            c.close();
             refreshTable();
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -178,8 +179,25 @@ public class gameSubmitGUI {
 
     // this method creates our table from the SQL database.
     public static JTable createTable() {
+        int count;
+        try { // this finds the count of rows in our database
+            // connection stuff and SQL instance starting stuff
+            Class.forName("org.sqlite.JDBC");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
+            // end that connection stuff
+
+            String q = "SELECT COUNT(title) FROM games"; // query that gets the count
+            Statement s = c.createStatement(); // the statement that takes in our query
+            ResultSet r = s.executeQuery(q); // what results from our statement
+            count = r.getInt(1);
+            c.close();
+        } catch (Exception e) {
+            count = 0;
+            System.out.println(e.getMessage());
+        }
+
         String[] columnNames = {"Title", "Platform", "Main Story Complete", "100%", "Has Multiplayer"}; // self explanatory
-        Object[][] data = new Object[5000][5000]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
+        Object[][] data = new Object[count][5]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
 
         try {
             // connection stuff and SQL instance starting stuff
@@ -195,34 +213,31 @@ public class gameSubmitGUI {
                 Object[] o = {r.getString("title"), r.getString("platform"), r.getInt("mainStory"), r.getInt("oneHundredPercent"), r.getInt("hasMultiplayer")};
                 data[row++] = o; // self explanatory
             }
+            c.close();
         } catch (Exception err) {
             System.out.println(err.getMessage());
         }
         DefaultTableModel model = new DefaultTableModel(data, columnNames);
-        JTable gameTable = new JTable(model) { // problem is here :(
+        JTable gameTable = new JTable(model) {
             public Component prepareRenderer(TableCellRenderer renderer, int row, int col) {
                 Component comp = super.prepareRenderer(renderer, row, col);
                 Object val = getValueAt(row, col);
                 if (!(val == null)) {
                     try {
+                        System.out.println(val + " " + val.getClass());
                         if (val instanceof Integer) {
-                            if ((int)val == 0) {
+                            if ((int) val == 0) {
                                 comp.setBackground(Color.red);
-                                System.out.println("True");
                             } else if ((int) val == 1) {
                                 comp.setBackground(Color.green);
-                                System.out.println("Super True");
-                            } else {
-                                comp.setBackground(Color.lightGray);
                             }
+                        } else if (val instanceof String){
+                            comp.setBackground(Color.white);
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                 }
-                //else if (!(getValueAt(row, col).equals(null)) && !(getValueAt(row, col).getClass().equals(String.class)) && (int)getValueAt(row, col) == 1) {
-                //    comp.setBackground(Color.green);
-                //}
                 return comp;
             }
         };
@@ -232,8 +247,25 @@ public class gameSubmitGUI {
 
     // refreshes the table after a query is performed.
     public void refreshTable() { // copied from createTable(), we're doing the same thing, just refreshing the existing gameTable.
+        int count;
+        try { // this finds the count of rows in our database
+            // connection stuff and SQL instance starting stuff
+            Class.forName("org.sqlite.JDBC");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
+            // end that connection stuff
+
+            String q = "SELECT COUNT(title) FROM games"; // query that gets the count
+            Statement s = c.createStatement(); // the statement that takes in our query
+            ResultSet r = s.executeQuery(q); // what results from our statement
+            count = r.getInt(1);
+            c.close();
+        } catch (Exception e) {
+            count = 0;
+            System.out.println(e.getMessage());
+        }
+
         String[] columnNames = {"Title", "Platform", "Main Story Complete", "100%", "Has Multiplayer"}; // self explanatory
-        Object[][] data = new Object[5000][5000]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
+        Object[][] data = new Object[count][5]; // have to pull our data from the SQL table. has lots of room, look into making this value changeable by the user?
 
         try {
             // connection stuff and SQL instance starting stuff
@@ -249,6 +281,7 @@ public class gameSubmitGUI {
                 Object[] o = {r.getString("title"), r.getString("platform"), r.getInt("mainStory"), r.getInt("oneHundredPercent"), r.getInt("hasMultiplayer")};
                 data[row++] = o; // self explanatory
             }
+            c.close();
         } catch (Exception err) {
             System.out.println(err.getMessage());
         }
