@@ -224,15 +224,20 @@ public class gameSubmitGUI {
                 Object val = getValueAt(row, col);
                 if (!(val == null)) {
                     try {
-                        System.out.println(val + " " + val.getClass());
+                        Color cuteRed = new Color(232, 78, 78);
+                        Color cuteGreen = new Color(92, 209, 99);
+
                         if (val instanceof Integer) {
                             if ((int) val == 0) {
-                                comp.setBackground(Color.red);
+                                comp.setBackground(cuteRed);
+                                comp.setForeground(cuteRed);
                             } else if ((int) val == 1) {
-                                comp.setBackground(Color.green);
+                                comp.setBackground(cuteGreen);
+                                comp.setForeground(cuteGreen);
                             }
                         } else if (val instanceof String){
                             comp.setBackground(Color.white);
+                            comp.setForeground(Color.black);
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());

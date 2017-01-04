@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36663f66-8e1c-4e7a-abf6-9de62521729d" name="Default" comment="Add GUI element hiding based on currently selected query type.">
+    <list default="true" id="36663f66-8e1c-4e7a-abf6-9de62521729d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/gameTracker_jar/gameTracker.jar" afterPath="$PROJECT_DIR$/out/artifacts/gameTracker_jar/gameTracker.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/gameTracker_jar/sqlite/gametracker.db" afterPath="$PROJECT_DIR$/out/artifacts/gameTracker_jar/sqlite/gametracker.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/gameSubmitGUI$3.class" afterPath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/gameSubmitGUI$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/gameSubmitGUI.class" afterPath="$PROJECT_DIR$/out/production/gameTracker/com/derek/gameTracker/gameSubmitGUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sqlite/gametracker.db" afterPath="$PROJECT_DIR$/sqlite/gametracker.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java" afterPath="$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java" />
@@ -41,13 +45,12 @@
       <file leaf-file-name="gameSubmitGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="220" column="46" lean-forward="true" selection-start-line="220" selection-start-column="46" selection-end-line="220" selection-end-column="46" />
+            <state relative-caret-position="554">
+              <caret line="215" column="22" lean-forward="true" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
                 <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-                <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -68,6 +71,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>print</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -516,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483403418889</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add color to table">
+      <created>1483540448837</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1483540448837</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -596,7 +611,8 @@
     <MESSAGE value="Code clean ups, more consistency." />
     <MESSAGE value="Make SQLite local instead of in specific spot in C drive, add SQLite things." />
     <MESSAGE value="Add GUI element hiding based on currently selected query type." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add GUI element hiding based on currently selected query type." />
+    <MESSAGE value="Add color to table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add color to table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -625,7 +641,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -651,7 +666,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -688,7 +702,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -717,7 +730,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -743,7 +755,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -761,7 +772,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -779,7 +789,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -805,7 +814,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,7 +839,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -860,7 +867,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,7 +895,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -912,13 +917,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="220" column="46" lean-forward="true" selection-start-line="220" selection-start-column="46" selection-end-line="220" selection-end-column="46" />
+        <state relative-caret-position="554">
+          <caret line="215" column="22" lean-forward="true" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
