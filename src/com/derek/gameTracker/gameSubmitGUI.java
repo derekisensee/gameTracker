@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class gameSubmitGUI {
-    private JPanel panel1;
+    private JPanel mainPanel;
 
     private JTextField gameInput;
     private JButton submitButton;
@@ -84,6 +84,7 @@ public class gameSubmitGUI {
     }
 
     public void createEntry() {
+        long startTime = System.currentTimeMillis();
         // the text getting stuff
         String gameTitle = gameInput.getText();
         String platform = (String)platformBox.getSelectedItem();
@@ -122,6 +123,8 @@ public class gameSubmitGUI {
         }
         gameInput.setText("");
         refreshTable();
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime);
     }
 
     public void editEntry() {
@@ -179,6 +182,7 @@ public class gameSubmitGUI {
 
     // this method creates our table from the SQL database.
     public static JTable createTable() {
+        long startTime = System.currentTimeMillis();
         int count;
         try { // this finds the count of rows in our database
             // connection stuff and SQL instance starting stuff
@@ -311,7 +315,7 @@ public class gameSubmitGUI {
 
     public static void main(String[] args) { // stuff that intelij made for me :)
         JFrame frame = new JFrame("gameSubmitGUI");
-        frame.setContentPane(new gameSubmitGUI().panel1);
+        frame.setContentPane(new gameSubmitGUI().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
