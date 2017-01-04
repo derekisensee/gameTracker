@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class gameSubmitGUI {
-    private JPanel mainPanel;
+    private JPanel panel1;
 
     private JTextField gameInput;
     private JButton submitButton;
@@ -30,9 +30,12 @@ public class gameSubmitGUI {
     private JRadioButton oneHundredPercentRadio;
 
     private JComboBox deleteGameBox;
-    private JLabel deleteGameLabel;
+    private JLabel deleteGameBoxLabel;
 
     public gameSubmitGUI() {
+        deleteGameBox.setVisible(false);
+        deleteGameBoxLabel.setVisible(false);
+
         submitButton.addActionListener(new ActionListener() { // when the submit button is pressed, do:
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,9 +64,6 @@ public class gameSubmitGUI {
                     multiplayerRadio.setVisible(true);
                     mainStoryRadio.setVisible(true);
                     oneHundredPercentRadio.setVisible(true);
-
-                    deleteGameBox.setVisible(false);
-                    deleteGameLabel.setVisible(false);
                 }
                 if (selected == 1) { // if 'edit' selection
                     gameInput.setVisible(true);
@@ -75,14 +75,14 @@ public class gameSubmitGUI {
                     platformBox.setVisible(false);
                     anotherUserExperienceLabel.setVisible(false);
                     deleteGameBox.setVisible(false);
-                    deleteGameLabel.setVisible(false);
+                    deleteGameBoxLabel.setVisible(false);
                 }
                 if (selected == 2) { // if 'delete' selection
-                    gameInput.setVisible(true);
-                    userGameEntryExperienceField.setVisible(true);
-                    deleteGameLabel.setVisible(true);
                     deleteGameBox.setVisible(true);
+                    deleteGameBoxLabel.setVisible(true);
 
+                    gameInput.setVisible(false);
+                    userGameEntryExperienceField.setVisible(false);
                     platformBox.setVisible(false);
                     anotherUserExperienceLabel.setVisible(false);
                     multiplayerRadio.setVisible(false);
@@ -94,7 +94,6 @@ public class gameSubmitGUI {
     }
 
     public void createEntry() {
-        long startTime = System.currentTimeMillis();
         // the text getting stuff
         String gameTitle = gameInput.getText();
         String platform = (String)platformBox.getSelectedItem();
@@ -133,8 +132,6 @@ public class gameSubmitGUI {
         }
         gameInput.setText("");
         refreshTable();
-        long endTime = System.currentTimeMillis();
-        System.out.println(endTime - startTime);
     }
 
     public void editEntry() {
@@ -320,11 +317,38 @@ public class gameSubmitGUI {
         // queryBox things
         String[] queries = {"Create New Entry", "Edit Entry", "Delete Entry"};
         queryType = new JComboBox(queries);
+
+        String[] gamesList;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
+            // end that connection stuff
+
+            String q = "SELECT COUNT(title) FROM games"; // query that gets the count
+            Statement s = c.createStatement(); // the statement that takes in our query
+            ResultSet r = s.executeQuery(q); // what results from our statement
+            int count = r.getInt(1);
+
+            String getQuery = "SELECT title FROM games"; // query that gets the count
+            Statement stat = c.createStatement(); // the statement that takes in our query
+            ResultSet result = s.executeQuery(getQuery); // what results from our statement
+            gamesList = new String[count];
+
+            int i = 0;
+            while (result.next()) {
+                gamesList[i++] = result.getString(1);
+            }
+            c.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            gamesList = new String[1];
+        }
+        deleteGameBox = new JComboBox(gamesList); // have to add the actual code to this now to make the selected game the game to be deleted
     }
 
     public static void main(String[] args) { // stuff that intelij made for me :)
         JFrame frame = new JFrame("gameSubmitGUI");
-        frame.setContentPane(new gameSubmitGUI().mainPanel);
+        frame.setContentPane(new gameSubmitGUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

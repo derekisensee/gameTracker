@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.derek.gameTracker.gameSubmitGUI">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="7" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="5" left="20" bottom="10" right="5"/>
     <constraints>
       <xy x="20" y="20" width="791" height="616"/>
@@ -103,18 +103,18 @@
           <text value="Has Multiplayer?"/>
         </properties>
       </component>
-      <component id="35e82" class="javax.swing.JComboBox" binding="deleteGameBox" custom-create="true">
+      <component id="6e734" class="javax.swing.JComboBox" binding="deleteGameBox" custom-create="true">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
       </component>
-      <component id="928fa" class="javax.swing.JLabel" binding="deleteGameLabel">
+      <component id="d628a" class="javax.swing.JLabel" binding="deleteGameBoxLabel">
         <constraints>
           <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Game to Delete"/>
+          <text value="Select Game to Delete"/>
         </properties>
       </component>
     </children>
