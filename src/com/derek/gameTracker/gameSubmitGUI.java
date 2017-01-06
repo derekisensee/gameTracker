@@ -91,6 +91,14 @@ public class gameSubmitGUI {
                 }
             }
         });
+
+        deleteGameBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String gameToDelete = (String)deleteGameBox.getSelectedItem();
+
+            }
+        });
     }
 
     public void createEntry() {
