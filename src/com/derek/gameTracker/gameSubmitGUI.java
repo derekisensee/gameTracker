@@ -51,15 +51,12 @@ public class gameSubmitGUI {
                 int actionToDo = queryType.getSelectedIndex();
                 if (actionToDo == 0) { // create entry
                     createEntry();
-                    comboBoxRefresh();
                 }
                 else if (actionToDo == 1) { // edit entry
                     editEntry();
                 }
                 else if (actionToDo == 2) { // delete entry
                     deleteEntry(gameToDelete);
-                    deleteGameBox.removeItem(gameToDelete);
-                    comboBoxRefresh(); // getting weird behavior here
                 }
             }
         });
@@ -106,8 +103,6 @@ public class gameSubmitGUI {
                 }
             }
         });
-
-
     }
 
     public void createEntry() {
@@ -143,12 +138,12 @@ public class gameSubmitGUI {
             s.setInt(5, hasMultiplayer);
             s.executeUpdate(); // executes.
             c.close();
+            deleteGameBox.addItem(gameTitle);
         } catch (Exception err) {
             System.out.println("error: " + err.toString()); // *hopefully* this never happens but whatever.
             // have to figure out a better way to make sure this never happens
         }
         gameInput.setText("");
-        comboBoxRefresh(); // am i having problems because of this?
         refreshTable();
     }
 
@@ -195,9 +190,9 @@ public class gameSubmitGUI {
 
             PreparedStatement s = c.prepareStatement(query);
             s.executeUpdate();
-            gameInput.setText("");
             c.close();
             refreshTable();
+            deleteGameBox.removeItem(title);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -320,37 +315,13 @@ public class gameSubmitGUI {
         gameTable.setModel(model);
     }
 
-    public void comboBoxRefresh() {
-        String[] gamesList;
-        try {
-            Class.forName("org.sqlite.JDBC");
-            Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
-            // end that connection stuff
-
-            String q = "SELECT COUNT(title) FROM games"; // query that gets the count
-            Statement s = c.createStatement(); // the statement that takes in our query
-            ResultSet r = s.executeQuery(q); // what results from our statement
-            int count = r.getInt(1);
-
-            String getQuery = "SELECT title FROM games"; // query that gets the count
-            Statement stat = c.createStatement(); // the statement that takes in our query
-            ResultSet result = s.executeQuery(getQuery); // what results from our statement
-            gamesList = new String[count];
-
-            int i = 0;
-            while (result.next()) {
-                gamesList[i++] = result.getString(1);
-            }
-            c.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            gamesList = new String[1];
-        }
-        deleteGameBox = new JComboBox(gamesList);
-    }
-
     // for the comboBoxes and table.
     private void createUIComponents() {
+        // menu bar
+        /*menuBar = new JMenuBar();
+        menu = new JMenu("File");
+        menuBar.add(menu);*/
+
         // the table things
         gameTable = createTable();
         scrollPane = new JScrollPane(gameTable);
@@ -392,7 +363,7 @@ public class gameSubmitGUI {
     }
 
     public static void main(String[] args) { // stuff that intelij made for me :)
-        JFrame frame = new JFrame("gameSubmitGUI");
+        final JFrame frame = new JFrame("gameSubmitGUI");
         frame.setContentPane(new gameSubmitGUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

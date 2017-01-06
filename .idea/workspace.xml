@@ -27,14 +27,11 @@
       <file leaf-file-name="gameSubmitGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state relative-caret-position="236">
+              <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#1749:3658" expanded="false" />
-                <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
                 <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-                <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
                 <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
                 <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
               </folding>
@@ -104,6 +101,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -150,9 +150,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -546,9 +543,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22992127" sideWeight="0.31551978" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22992127" sideWeight="0.3191801" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22992127" sideWeight="0.68448025" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22992127" sideWeight="0.6808199" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.49479166" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -639,10 +636,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -660,10 +654,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -681,10 +672,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -702,10 +690,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -723,10 +708,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -744,10 +726,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -775,10 +754,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -806,10 +782,7 @@
           <caret line="201" column="48" lean-forward="false" selection-start-line="201" selection-start-column="48" selection-end-line="201" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -834,10 +807,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -872,10 +842,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -903,10 +870,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -931,10 +895,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -952,10 +913,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -973,38 +931,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -1029,10 +956,32 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
+            <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
+            <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -1060,10 +1009,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -1091,10 +1037,7 @@
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
@@ -1117,26 +1060,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/derek/gameTracker/gameSubmitGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="236">
+          <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1749:3658" expanded="false" />
-            <element signature="method#createEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#editEntry#0;class#gameSubmitGUI#0" expanded="false" />
-            <element signature="method#deleteEntry#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#createTable#0;class#gameSubmitGUI#0" expanded="false" />
             <element signature="method#refreshTable#0;class#gameSubmitGUI#0" expanded="false" />
           </folding>
