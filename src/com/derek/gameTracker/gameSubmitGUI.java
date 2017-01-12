@@ -28,19 +28,20 @@ public class gameSubmitGUI {
     private JRadioButton mainStoryRadio;
     private JRadioButton oneHundredPercentRadio;
 
-    private JComboBox deleteGameBox;
-    private JLabel deleteGameBoxLabel;
+    private JComboBox gameSelectBox;
+    private JLabel gameSelectBoxLabel;
+    private JLabel editGameLabel;
 
-    private String gameToDelete;
+    private String selectedGame;
 
     public gameSubmitGUI() {
-        deleteGameBox.setVisible(false);
-        deleteGameBoxLabel.setVisible(false);
+        gameSelectBox.setVisible(false);
+        gameSelectBoxLabel.setVisible(false);
 
-        deleteGameBox.addActionListener(new ActionListener() {
+        gameSelectBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameToDelete = (String)deleteGameBox.getSelectedItem();
+                selectedGame = (String) gameSelectBox.getSelectedItem();
             }
         });
 
@@ -52,10 +53,10 @@ public class gameSubmitGUI {
                     createEntry();
                 }
                 else if (actionToDo == 1) { // edit entry
-                    editEntry();
+                    editEntry(selectedGame);
                 }
                 else if (actionToDo == 2) { // delete entry
-                    deleteEntry(gameToDelete);
+                    deleteEntry(selectedGame);
                 }
             }
         });
@@ -73,25 +74,29 @@ public class gameSubmitGUI {
                     mainStoryRadio.setVisible(true);
                     oneHundredPercentRadio.setVisible(true);
 
-                    deleteGameBox.setVisible(false);
-                    deleteGameBoxLabel.setVisible(false);
+                    editGameLabel.setVisible(false);
+                    gameSelectBox.setVisible(false);
+                    gameSelectBoxLabel.setVisible(false);
                 }
                 if (selected == 1) { // if 'edit' selection
-                    gameInput.setVisible(true);
-                    userGameEntryExperienceField.setVisible(true);
                     multiplayerRadio.setVisible(true);
                     mainStoryRadio.setVisible(true);
                     oneHundredPercentRadio.setVisible(true);
+                    gameSelectBox.setVisible(true);
+                    gameSelectBoxLabel.setVisible(true);
+                    editGameLabel.setVisible(true);
 
+                    gameSelectBoxLabel.setVisible(false);
+                    gameInput.setVisible(false);
+                    userGameEntryExperienceField.setVisible(false);
                     platformBox.setVisible(false);
                     anotherUserExperienceLabel.setVisible(false);
-                    deleteGameBox.setVisible(false);
-                    deleteGameBoxLabel.setVisible(false);
                 }
                 if (selected == 2) { // if 'delete' selection
-                    deleteGameBox.setVisible(true);
-                    deleteGameBoxLabel.setVisible(true);
+                    gameSelectBox.setVisible(true);
+                    gameSelectBoxLabel.setVisible(true);
 
+                    editGameLabel.setVisible(false);
                     gameInput.setVisible(false);
                     userGameEntryExperienceField.setVisible(false);
                     platformBox.setVisible(false);
@@ -137,7 +142,7 @@ public class gameSubmitGUI {
             s.setInt(5, hasMultiplayer);
             s.executeUpdate(); // executes.
             c.close();
-            deleteGameBox.addItem(gameTitle);
+            gameSelectBox.addItem(gameTitle);
         } catch (Exception err) {
             System.out.println("error: " + err.toString()); // *hopefully* this never happens but whatever.
             // have to figure out a better way to make sure this never happens
@@ -146,12 +151,10 @@ public class gameSubmitGUI {
         refreshTable();
     }
 
-    public void editEntry() {
+    public void editEntry(String title) {
         try {
             Class.forName("org.sqlite.JDBC");
             Connection c = DriverManager.getConnection("jdbc:sqlite:sqlite\\gametracker.db");
-
-            String title = gameInput.getText();
             int mainStory = 0;
             int oneHundredPercent = 0;
             int hasMultiplayer = 0;
@@ -191,7 +194,7 @@ public class gameSubmitGUI {
             s.executeUpdate();
             c.close();
             refreshTable();
-            deleteGameBox.removeItem(title);
+            gameSelectBox.removeItem(title);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -358,7 +361,7 @@ public class gameSubmitGUI {
             System.out.println(e.getMessage());
             gamesList = new String[1];
         }
-        deleteGameBox = new JComboBox(gamesList);
+        gameSelectBox = new JComboBox(gamesList);
     }
 
     public static void main(String[] args) { // stuff that intelij made for me :)
