@@ -1,4 +1,4 @@
-// have to see if there's a better way to do the SQL stuff: i.e. doing it all in one chunk of code instead of two.
+// have to see if there's a better way to do the SQL stuff: i.e. doing it all in one chunk of code instead of three..
 package com.derek.gameTracker;
 
 import javax.swing.*;
@@ -15,96 +15,70 @@ public class gameSubmitGUI {
     private JTextField gameInput;
     private JButton submitButton;
 
+    private JTabbedPane tabbedPane1;
+    private JPanel editPanel;
+    private JPanel createPanel;
+    private JPanel deletePanel;
+
     private JLabel userGameEntryExperienceField;
     private JLabel anotherUserExperienceLabel;
-
     private JTable gameTable;
+
     private JScrollPane scrollPane;
-
     private JComboBox platformBox;
-    private JComboBox queryType;
 
+    private JComboBox queryType;
     private JRadioButton multiplayerRadio;
     private JRadioButton mainStoryRadio;
-    private JRadioButton oneHundredPercentRadio;
 
+    private JRadioButton oneHundredPercentRadio;
     private JComboBox gameSelectBox;
     private JLabel gameSelectBoxLabel;
     private JLabel editGameLabel;
 
-    private String selectedGame;
+    private JRadioButton editOneHundredPercentRadio;
+    private JRadioButton editHasMultiplayer;
+    private JRadioButton editMainStoryCompleteRadio;
+
+    private JButton deleteSubmit;
+    private JComboBox deleteGameSelect;
+    private JButton editSubmitButton;
+
+    private String editSelectedGameString;
+    private String deleteSelectedGameString;
 
     public gameSubmitGUI() {
-        gameSelectBox.setVisible(false);
-        gameSelectBoxLabel.setVisible(false);
-
         gameSelectBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedGame = (String) gameSelectBox.getSelectedItem();
+                editSelectedGameString = (String) gameSelectBox.getSelectedItem();
+            }
+        });
+
+        deleteGameSelect.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                deleteSelectedGameString = (String) deleteGameSelect.getSelectedItem();
             }
         });
 
         submitButton.addActionListener(new ActionListener() { // when the submit button is pressed, do:
             @Override
             public void actionPerformed(ActionEvent e) {
-                int actionToDo = queryType.getSelectedIndex();
-                if (actionToDo == 0) { // create entry
-                    createEntry();
-                }
-                else if (actionToDo == 1) { // edit entry
-                    editEntry(selectedGame);
-                }
-                else if (actionToDo == 2) { // delete entry
-                    deleteEntry(selectedGame);
-                }
+                createEntry();
             }
         });
-        queryType.addActionListener(new ActionListener() { // hides or shows elements based on selected comboBox index
+
+        editSubmitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int selected = queryType.getSelectedIndex();
-
-                if (selected == 0) { // if 'create' selection
-                    gameInput.setVisible(true);
-                    userGameEntryExperienceField.setVisible(true);
-                    anotherUserExperienceLabel.setVisible(true);
-                    platformBox.setVisible(true);
-                    multiplayerRadio.setVisible(true);
-                    mainStoryRadio.setVisible(true);
-                    oneHundredPercentRadio.setVisible(true);
-
-                    editGameLabel.setVisible(false);
-                    gameSelectBox.setVisible(false);
-                    gameSelectBoxLabel.setVisible(false);
-                }
-                if (selected == 1) { // if 'edit' selection
-                    multiplayerRadio.setVisible(true);
-                    mainStoryRadio.setVisible(true);
-                    oneHundredPercentRadio.setVisible(true);
-                    gameSelectBox.setVisible(true);
-                    gameSelectBoxLabel.setVisible(true);
-                    editGameLabel.setVisible(true);
-
-                    gameSelectBoxLabel.setVisible(false);
-                    gameInput.setVisible(false);
-                    userGameEntryExperienceField.setVisible(false);
-                    platformBox.setVisible(false);
-                    anotherUserExperienceLabel.setVisible(false);
-                }
-                if (selected == 2) { // if 'delete' selection
-                    gameSelectBox.setVisible(true);
-                    gameSelectBoxLabel.setVisible(true);
-
-                    editGameLabel.setVisible(false);
-                    gameInput.setVisible(false);
-                    userGameEntryExperienceField.setVisible(false);
-                    platformBox.setVisible(false);
-                    anotherUserExperienceLabel.setVisible(false);
-                    multiplayerRadio.setVisible(false);
-                    mainStoryRadio.setVisible(false);
-                    oneHundredPercentRadio.setVisible(false);
-                }
+                editEntry(editSelectedGameString);
+            }
+        });
+        deleteSubmit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                deleteEntry(deleteSelectedGameString);
             }
         });
     }
@@ -143,6 +117,7 @@ public class gameSubmitGUI {
             s.executeUpdate(); // executes.
             c.close();
             gameSelectBox.addItem(gameTitle);
+            deleteGameSelect.addItem(gameTitle);
         } catch (Exception err) {
             System.out.println("error: " + err.toString()); // *hopefully* this never happens but whatever.
             // have to figure out a better way to make sure this never happens
@@ -161,13 +136,13 @@ public class gameSubmitGUI {
 
             String query = "UPDATE games SET mainStory = ?, oneHundredPercent = ?, hasMultiplayer = ? WHERE title = '" + title + "'";
 
-            if (mainStoryRadio.isSelected()) {
+            if (editMainStoryCompleteRadio.isSelected()) {
                 mainStory = 1;
             }
-            if (oneHundredPercentRadio.isSelected()) {
+            if (editOneHundredPercentRadio.isSelected()) {
                 oneHundredPercent = 1;
             }
-            if (multiplayerRadio.isSelected()) {
+            if (editHasMultiplayer.isSelected()) {
                 hasMultiplayer = 1;
             }
 
@@ -180,7 +155,6 @@ public class gameSubmitGUI {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        gameInput.setText("");
         refreshTable();
     }
 
@@ -195,6 +169,7 @@ public class gameSubmitGUI {
             c.close();
             refreshTable();
             gameSelectBox.removeItem(title);
+            deleteGameSelect.removeItem(title);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -362,13 +337,15 @@ public class gameSubmitGUI {
             gamesList = new String[1];
         }
         gameSelectBox = new JComboBox(gamesList);
+        deleteGameSelect = new JComboBox(gamesList);
     }
 
     public static void main(String[] args) { // stuff that intelij made for me :)
         final JFrame frame = new JFrame("gameSubmitGUI");
         frame.setContentPane(new gameSubmitGUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+        //frame.pack(); // automatically resizes frame to be smaller
+        frame.setSize(1100, 500);
         frame.setVisible(true);
     }
 }
